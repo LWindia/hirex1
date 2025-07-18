@@ -11,7 +11,7 @@ const WhyCompaniesSection = () => (
             Why Should Companies Join <span className="text-red-600">HIREX</span>?
           </h2>
           <div className="bg-red-600 text-white px-6 py-3 rounded-full inline-block text-xl font-bold hover:bg-red-700 hover:scale-110 transition-all duration-500 animate-pulse">
-            0 Cost to Recruit
+           Zero Cost to Recruit
           </div>
         </div>
       </AnimatedSection>
