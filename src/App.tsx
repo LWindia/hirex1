@@ -30,6 +30,7 @@ import WhatCompaniesGetSection from './WhatCompaniesGetSection';
 import StudentProfilesSection from './StudentProfilesSection';
 import CallToActionSection from './CallToActionSection';
 import FooterSection from './FooterSection';
+import HirexInterestSection from './HirexInterestSection';
 
 // Counter component for animated numbers
 const Counter = ({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) => {
@@ -257,7 +258,8 @@ function App() {
       <HirexExperienceSection />
       <WhatCompaniesGetSection />
       <StudentProfilesSection students={students} />
-      <CallToActionSection />
+      <HirexInterestSection />
+      {/* <CallToActionSection /> */}
       <FooterSection />
     </div>
   );
