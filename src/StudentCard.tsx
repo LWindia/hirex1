@@ -1,6 +1,7 @@
 import React from 'react';
 import useIntersectionObserver from './useIntersectionObserver';
 import { Linkedin, Github, ExternalLink, Star } from 'lucide-react';
+import { Student } from '../types/Student';
 
 const StudentCard = ({ name, college, year, image, index }: { name: string; college: string; year: string; image: string; index: number }) => {
   const [ref, isVisible] = useIntersectionObserver();

@@ -12,18 +12,35 @@ function useIsMobile() {
 }
 
 const backgroundImagesDesktop = [
-  '/assets/Hirex-main-banner.jpg',
-  '/assets/Hirex-main-banner2.jpg',
-  '/assets/Hirex-main-banner3.jpg',
-  '/assets/Hirex-main-banner4.jpg',
+  '/assets/banner1.jpg',
+  '/assets/banner2.jpg',
+  '/assets/banner3.jpg',
+  '/assets/banner4.jpg',
+  '/assets/banner5.jpg',
+  '/assets/banner6.jpg',
+  '/assets/banner7.jpg',
+  '/assets/banner8.jpg',
+  '/assets/banner9.jpg',
+  '/assets/banner10.jpg',
+  '/assets/banner11.jpg',
+  '/assets/banner12.jpg',
+  '/assets/banner13.jpg',
 ];
 
 // Add your mobile-specific images here (can reuse or use new ones)
 const backgroundImagesMobile = [
-  '/assets/1.jpg',
-  '/assets/2.jpg',
-  '/assets/3.jpg',
-  '/assets/4.jpg',
+  '/assets/M1.jpg',
+  '/assets/M2.jpg',
+  '/assets/M3.jpg',
+  '/assets/M4.jpg',
+  '/assets/M5.jpg',
+  '/assets/M6.jpg',
+  '/assets/M7.jpg',
+  '/assets/M8.jpg',
+  '/assets/M9.jpg',
+  '/assets/M10.jpg',
+  '/assets/M11.jpg',
+  '/assets/M12.jpg',
 ];
 
 const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
@@ -52,7 +69,7 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
       <nav className="fixed top-0 left-0 w-full z-20 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-black text-red-600 tracking-tight">HIREX</span>
+            <img src="/assets/logo.png" alt="HIREX Logo" className="h-10 w-auto" />
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">About</a>
@@ -90,9 +107,9 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-center text-center">
           <div className="flex flex-col md:flex-row items-center justify-center w-full">
             {/* HIREX 2025 left block */}
-            <div className="flex flex-col items-center md:items-start md:w-1/2">
-              <div className="flex items-center">
-                <span className="text-[6rem] ml-28 md:text-[10rem] font-black text-red-600 leading-none tracking-tight select-none relative" style={{lineHeight:1}}>
+            <div className="flex flex-col items-center md:items-start md:w-1/2 w-full">
+              <div className="flex items-center justify-center md:justify-start w-full">
+                <span className="text-[6rem] ml-0 md:ml-28 md:text-[10rem] font-black text-red-600 leading-none tracking-tight select-none relative" style={{lineHeight:1}}>
                   HIRE
                   <span className="relative text-[6rem] md:text-[10rem] font-black text-red-600 ml-1">
                     X

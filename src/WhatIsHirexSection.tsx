@@ -25,7 +25,7 @@ const WhatIsHirexSection = () => (
           </div>
           <div className="relative">
             <img 
-              src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+              src="/assets/what-is-HIREX.jpg" 
               alt="HIREX Platform"
               className="rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500"
             />

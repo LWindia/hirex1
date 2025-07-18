@@ -11,7 +11,7 @@ const StudentProfilesSection = ({ students }: { students: any[] }) => (
             Meet Our <span className="text-red-600">Students</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Industry-ready talent from top engineering colleges across India
+            Industry-ready talent from engineering colleges across India
           </p>
         </div>
       </AnimatedSection>
@@ -19,6 +19,13 @@ const StudentProfilesSection = ({ students }: { students: any[] }) => (
         {students.map((student, index) => (
           <StudentCard key={index} {...student} index={index} />
         ))}
+      </div>
+      <div className="flex justify-center mt-10">
+        <a href="/portfolios" target="_blank" rel="noopener noreferrer">
+          <button className="bg-red-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg transition-all duration-500 hover:bg-red-700 hover:scale-110 animate-pulse">
+            See All Portfolios...
+          </button>
+        </a>
       </div>
     </div>
   </section>
