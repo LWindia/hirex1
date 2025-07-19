@@ -3,7 +3,7 @@ import AnimatedSection from './AnimatedSection';
 import ComparisonFeature from './ComparisonFeature';
 
 const HirexExperienceSection = () => (
-  <section className="py-20 bg-white">
+  <section className="py-20 bg-white" id='companies'>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <AnimatedSection>
         <div className="text-center mb-16">

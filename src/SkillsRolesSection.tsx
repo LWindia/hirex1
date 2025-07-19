@@ -3,7 +3,7 @@ import AnimatedSection from './AnimatedSection';
 import SkillCard from './SkillCard';
 
 const SkillsRolesSection = ({ skills }: { skills: any[] }) => (
-  <section className="py-20 bg-gray-50">
+  <section className="py-20 bg-gray-50" id='skills'>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <AnimatedSection>
         <div className="text-center mb-16">

@@ -73,7 +73,7 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
           </div>
           <div className="hidden md:flex space-x-8">
             <a href="#about" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">About</a>
-            <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Companies</a>
+            <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Hirex</a>
             <a href="#skills" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Skills</a>
             <a href="#students" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Students</a>
             <a href="#contact" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Contact</a>

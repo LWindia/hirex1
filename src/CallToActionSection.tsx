@@ -3,7 +3,7 @@ import AnimatedSection from './AnimatedSection';
 import { Calendar, MapPin } from 'lucide-react';
 
 const CallToActionSection = () => (
-  <section className="py-20 bg-gradient-to-r from-red-600 to-black text-white">
+  <section className="py-20 bg-gradient-to-r from-red-600 to-black text-white" id='contact'>
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <AnimatedSection>
         <h2 className="text-4xl md:text-5xl font-black mb-6 hover:scale-105 transition-transform duration-500">
