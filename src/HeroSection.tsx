@@ -72,7 +72,7 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
             <img src="/assets/logo.png" alt="HIREX Logo" className="h-10 w-auto" />
           </div>
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">About</a>
+            {/* <a href="#about" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">About</a> */}
             <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Hirex</a>
             <a href="#skills" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Skills</a>
             <a href="#students" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Students</a>
@@ -143,10 +143,13 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
           </div>
           {/* CTA Button */}
           <div className="text-center">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 md:px-16 md:py-6 rounded-full text-xl md:text-2xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl">
-              Join the Hiring Revolution
-            </button>
-          </div>
+      <a href="https://forms.gle/qSL3CjKp7HB5qLye7" target="_blank" rel="noopener noreferrer">
+        <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 md:px-16 md:py-6 rounded-full text-xl md:text-2xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl">
+          Join the Hiring Revolution
+        </button>
+  </a>
+</div>
+
         </div>
       </div>
     </section>
