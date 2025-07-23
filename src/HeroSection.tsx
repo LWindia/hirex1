@@ -71,13 +71,16 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
           <div className="flex items-center">
             <img src="/assets/logo.png" alt="HIREX Logo" className="h-10 w-auto" />
           </div>
-          <div className="hidden md:flex space-x-8">
-            {/* <a href="#about" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">About</a> */}
-            <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Hirex</a>
-            <a href="#skills" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Skills</a>
-            <a href="#students" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Students</a>
-            <a href="#contact" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Contact</a>
-          </div>
+         <div className="hidden md:flex space-x-8">
+  <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Hirex</a>
+  <a href="#skills" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Skills</a>
+  <a href="#students" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Students</a>
+          <a href="#contact" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">
+            Contact
+          </a>
+
+</div>
+
           <div className="md:hidden">
             {/* Mobile menu button (optional: add hamburger menu here) */}
           </div>

@@ -53,7 +53,7 @@ const StudentCard = ({
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{name}</h3>
         <p className="text-gray-600 text-sm mb-1 font-medium">{college}</p>
-        <p className="text-gray-500 text-sm mb-2">Class of {passingOutYear}</p>
+        <p className="text-gray-500 text-sm mb-2">Passing Year {passingOutYear}</p>
         <p className="text-red-600 text-sm font-semibold mb-3">{role}</p>
         <div className="flex justify-center items-center mb-4">
           <MapPin className="w-4 h-4 text-gray-500 mr-1" />
