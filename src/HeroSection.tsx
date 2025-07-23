@@ -65,27 +65,7 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Nav Bar */}
-      <nav className="fixed top-0 left-0 w-full z-20 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <img src="/assets/logo.png" alt="HIREX Logo" className="h-10 w-auto" />
-          </div>
-         <div className="hidden md:flex space-x-8">
-  <a href="#companies" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Hirex</a>
-  <a href="#skills" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Skills</a>
-  <a href="#students" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">Students</a>
-          <a href="#contact" className="text-gray-700 hover:text-red-600 font-semibold transition-colors">
-            Contact
-          </a>
-
-</div>
-
-          <div className="md:hidden">
-            {/* Mobile menu button (optional: add hamburger menu here) */}
-          </div>
-        </div>
-      </nav>
+  
       {/* Horizontal sliding background images */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div
@@ -145,13 +125,14 @@ const HeroSection = ({ isVisible }: { isVisible: boolean }) => {
             </span>
           </div>
           {/* CTA Button */}
-          <div className="text-center">
-      <a href="https://forms.gle/qSL3CjKp7HB5qLye7" target="_blank" rel="noopener noreferrer">
+     <div className="text-center">
+      <a href="#contact" rel="noopener noreferrer">
         <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 md:px-16 md:py-6 rounded-full text-xl md:text-2xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl shadow-xl">
           Join the Hiring Revolution
         </button>
-  </a>
-</div>
+      </a>
+    </div>
+
 
         </div>
       </div>

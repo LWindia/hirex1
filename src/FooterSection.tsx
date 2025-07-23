@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const FooterSection = () => (
-  <footer className="bg-black text-white py-12">
+  <footer className="bg-black text-white py-12" id='contact'>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <AnimatedSection>
         <h3 className="text-3xl font-black mb-4 hover:text-red-500 transition-colors duration-500">
