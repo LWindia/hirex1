@@ -281,7 +281,7 @@ function App() {
       availability: ['Full Time']
     },
     {
-      id: '4',
+      id: '6',
       name: 'Hemant Modi',
       college: 'Vivekananda Global University',
       passingOutYear: '2027',
@@ -292,7 +292,7 @@ function App() {
       availability: ['Full Time']
     },
     {
-  id: '5',
+  id: '4',
   name: 'Hitesh Singh',
   college: 'Arya College of Engineering and IT',
   passingOutYear: '2025',
@@ -303,18 +303,19 @@ function App() {
  
   availability: ['Full Time']
 },
-{
-  id: '6',
-  name: 'Anshul Shrivastava',
-  college: 'Geetanjali Institute of Technical Studies',
-  passingOutYear: '2025', // Not provided, assuming based on peers
-  github: 'https://github.com/anshulshrivastava110',
-  linkedin: 'https://www.linkedin.com/in/anshul-shrivastava-039030359',
-  portfolio: 'https://deft-halva-d76ba8.netlify.app/',
-  photo: '/assets/students/Anshul  Shrivastava.jpeg',
-  availability: ['Full Time']
-}
-   
+
+    {
+    id: '5',
+    name: 'Pintoo Safi',
+    college: 'VIT JAIPUR',
+    passingOutYear: '2026',
+    github: 'https://github.com/asclepius15',
+    portfolio: 'https://pin2-safi-portfolio.vercel.app',
+    photo: '/assets/students/PINTOO SAFI.webp',
+    Linkedin:'https://www.linkedin.com/in/pintoo-safi-3b8b56277/',
+    role: 'DevOps Engineer',
+    availability: ['Full-Time']
+  },
   ];
 
   const states = [
