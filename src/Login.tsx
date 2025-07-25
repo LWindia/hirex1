@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 
 const COMPANY_CREDENTIALS = [
-  { email: 'prateek@curiousai.in', password: '123', redirectUrl: 'https://curiousai.in/' },
+  { email: 'prateek@curiousai.in', password: 'prateek@hirex2025', redirectUrl: 'https://curiousai.in/' },
   { email: 'jibbran@gmail.com', password: '1234', redirectUrl: 'https://www.google.com/' },
   // Add more users as needed
 ];
 
-interface LoginProps {
-  onLoginSuccess?: () => void;
-  onCancel?: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({ onLoginSuccess, onCancel }) => {
+const Login = ({ onLoginSuccess, onCancel }: { onLoginSuccess?: (email: string) => void; onCancel?: () => void }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -23,8 +18,11 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess, onCancel }) => {
     );
     if (found) {
       setError('');
-      if (onLoginSuccess) onLoginSuccess();
-      window.location.href = found.redirectUrl;
+      if (onLoginSuccess) onLoginSuccess(found.email);
+      // Only redirect if not prateek@curiousai.in
+      if (found.email.toLowerCase() !== 'prateek@curiousai.in') {
+        window.location.href = found.redirectUrl;
+      }
     } else {
       setError('Invalid email or password');
     }
