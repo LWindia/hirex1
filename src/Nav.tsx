@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Navbar = () => {
+interface NavbarProps {
+  onCompanyLoginClick?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onCompanyLoginClick }) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
     e.preventDefault();
     const target = document.getElementById(id);
@@ -45,8 +49,16 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-        <div className="md:hidden">
-          {/* Mobile menu button (optional: add hamburger menu here) */}
+        <div className="flex items-center space-x-4">
+          <button
+            onClick={onCompanyLoginClick}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-red-700 transition-colors"
+          >
+            Company Login
+          </button>
+          <div className="md:hidden">
+            {/* Mobile menu button (optional: add hamburger menu here) */}
+          </div>
         </div>
       </div>
     </nav>
