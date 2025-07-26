@@ -2,29 +2,19 @@ import React from 'react';
 import useIntersectionObserver from './useIntersectionObserver';
 import { Linkedin, Github, ExternalLink, Star, MapPin } from 'lucide-react';
 
-const StudentCard = ({ 
-  name, 
-  college, 
-  passingOutYear, 
-  photo, 
-  github, 
-  linkedin,
-  portfolio, 
-  role, 
-  availability, 
-  index 
-}: { 
-  name: string; 
-  college: string; 
-  passingOutYear: string; 
-  photo: string; 
-  github: string;
-  linkedin: string;
-  portfolio: string;
-  role: string;
-  availability: string[];
-  index: number 
-}) => {
+interface StudentCardProps {
+  name: string;
+  college: string;
+  year: string;
+  image: string;
+  index: number;
+  github?: string;
+  linkedin?: string;
+  portfolio?: string;
+  onExternalLinkClick?: (type: 'github' | 'linkedin' | 'portfolio', student: any) => void;
+}
+
+const StudentCard = ({ name, college, year, image, index, github, linkedin, portfolio, onExternalLinkClick }: StudentCardProps) => {
   const [ref, isVisible] = useIntersectionObserver();
   const colors = ['bg-blue-500', 'bg-green-500', 'bg-teal-500', 'bg-purple-500', 'bg-orange-500', 'bg-pink-500'];
   const colorClass = colors[index % colors.length];
@@ -43,7 +33,7 @@ const StudentCard = ({
       <div className="relative z-10 p-8">
         <div className="relative mb-6">
           <img 
-            src={photo} 
+            src={image} 
             alt={name}
             className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-500"
           />
@@ -53,37 +43,46 @@ const StudentCard = ({
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{name}</h3>
         <p className="text-gray-600 text-sm mb-1 font-medium">{college}</p>
-        <p className="text-gray-500 text-sm mb-2">Passing Year {passingOutYear}</p>
-        <p className="text-red-600 text-sm font-semibold mb-3">{role}</p>
+        <p className="text-gray-500 text-sm mb-2">Passing Year {year}</p>
+        <p className="text-red-600 text-sm font-semibold mb-3">Role: {/* Assuming 'role' is not passed as a prop anymore */}</p>
         <div className="flex justify-center items-center mb-4">
           <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-          <span className="text-xs text-gray-500">{availability.join(', ')}</span>
+          <span className="text-xs text-gray-500">Availability: {/* Assuming 'availability' is not passed as a prop anymore */}</span>
         </div>
         <div className="flex justify-center space-x-4">
-          <a 
-            href={linkedin} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-blue-100 hover:bg-blue-600 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
-          >
-            <Linkedin className="w-5 h-5 text-blue-600 group-hover:text-white" />
-          </a>
-          <a 
-            href={github} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-gray-100 hover:bg-gray-800 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
-          >
-            <Github className="w-5 h-5 text-gray-800 group-hover:text-white" />
-          </a>
-          <a 
-            href={portfolio} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-red-100 hover:bg-red-600 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
-          >
-            <ExternalLink className="w-5 h-5 text-red-600 group-hover:text-white" />
-          </a>
+          {linkedin && (
+            <a 
+              href={linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={e => { e.preventDefault(); onExternalLinkClick && onExternalLinkClick('linkedin', { name, college, year, image, github, linkedin, portfolio }); }}
+              className="bg-blue-100 hover:bg-blue-600 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
+            >
+              <Linkedin className="w-5 h-5 text-blue-600 group-hover:text-white" />
+            </a>
+          )}
+          {github && (
+            <a 
+              href={github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={e => { e.preventDefault(); onExternalLinkClick && onExternalLinkClick('github', { name, college, year, image, github, linkedin, portfolio }); }}
+              className="bg-gray-100 hover:bg-gray-800 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
+            >
+              <Github className="w-5 h-5 text-gray-800 group-hover:text-white" />
+            </a>
+          )}
+          {portfolio && (
+            <a 
+              href={portfolio} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={e => { e.preventDefault(); onExternalLinkClick && onExternalLinkClick('portfolio', { name, college, year, image, github, linkedin, portfolio }); }}
+              className="bg-red-100 hover:bg-red-600 p-3 rounded-full transition-all duration-300 group hover:scale-110 hover:rotate-12 shadow-md"
+            >
+              <ExternalLink className="w-5 h-5 text-red-600 group-hover:text-white" />
+            </a>
+          )}
         </div>
       </div>
     </div>

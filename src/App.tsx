@@ -32,6 +32,8 @@ import CallToActionSection from './CallToActionSection';
 import FooterSection from './FooterSection';
 import HirexInterestSection from './HirexInterestSection';
 import Navbar from './Nav';
+import Login from './Login';
+import StudentShowcasePage from './StudentShowcasePage';
 
 // Counter component for animated numbers
 const Counter = ({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) => {
@@ -196,6 +198,8 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState<string | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -325,20 +329,36 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar/>
-      <HeroSection isVisible={isVisible} />
-      <WhatIsHirexSection />
-      <WhyCompaniesSection />
-      <SkillsRolesSection skills={skills} />
-      <StudentStatsSection states={states} />
-      <HirexExperienceSection />
-      <WhatCompaniesGetSection />
-      <StudentProfilesSection students={students} />
-      <HirexInterestSection />
-      {/* <CallToActionSection /> */}
-      <FooterSection />
-    </div>
+    <>
+      {/* If logged in as prateek@curiousai.in, show only the StudentShowcasePage */}
+      {loggedInUser === 'prateek@curiousai.in' ? (
+        <StudentShowcasePage />
+      ) : (
+        <div className="min-h-screen">
+          <Navbar onCompanyLoginClick={() => setShowLogin(true)} />
+          <HeroSection isVisible={isVisible} />
+          <WhatIsHirexSection />
+          <WhyCompaniesSection />
+          <SkillsRolesSection skills={skills} />
+          <StudentStatsSection states={states} />
+          <HirexExperienceSection />
+          <WhatCompaniesGetSection />
+          <StudentProfilesSection students={students} />
+          <HirexInterestSection />
+          {/* <CallToActionSection /> */}
+          <FooterSection />
+        </div>
+      )}
+      {showLogin && !loggedInUser && (
+        <Login 
+          onLoginSuccess={(email) => {
+            setLoggedInUser(email);
+            setShowLogin(false);
+          }}
+          onCancel={() => setShowLogin(false)}
+        />
+      )}
+    </>
   );
 }
 

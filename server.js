@@ -1,11 +1,32 @@
+import express from 'express';
 import nodemailer from 'nodemailer';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-export default async function handler(req: any, res: any) {
-  if (req.method !== 'POST') {
-    res.status(405).json({ success: false, message: 'Method Not Allowed' });
-    return;
-  }
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
+dotenv.config({ path: '.env.local' });
+
+const app = express();
+const PORT = 3001;
+
+app.use(cors());
+app.use(express.json());
+
+// Add a simple route for testing
+app.get('/', (req, res) => {
+  res.json({ message: 'HIREX API Server is running!', status: 'ok' });
+});
+
+// Add a test route for the API
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!', timestamp: new Date().toISOString() });
+});
+
+app.post('/api/send-email', async (req, res) => {
   const { fullName, companyName, designation, email, contact, interestedIn, count } = req.body;
 
   // Validate required fields
@@ -125,4 +146,8 @@ Submission Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata'
       details: error.message 
     });
   }
-}
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+}); 
