@@ -73,7 +73,7 @@ const studentsData: Student[] = [
     passingOutYear: '2026',
     github: 'https://github.com/raj85410',
     portfolio: 'https://rajupotfolio.vercel.app/',
-    photo: '/assets/students/Raj Jain.jpg',
+    photo: '/assets/students/Raju Jain.jpg',
     role: 'DevOps Engineer',
     availability: ['Full-Time']
   },
@@ -101,13 +101,13 @@ const studentsData: Student[] = [
   },
   {
     id: '319',
-    name: 'Bhavya Jain',
-    college: 'Vivekanand Global University',
-    passingOutYear: '2026',
-    portfolio: '*',
+    name: 'Bhavya',
+    college: 'JECRC',
+    passingOutYear: '2024',
+    portfolio: 'https://bhavyasharma428.netlify.app/',
     github: 'https://github.com/BHAVYA-a28',
     role: 'Full-Stack Web Developer',
-    photo: '/assets/students/Bhavya Jain.jpg',
+    photo: '/assets/students/Bhavya.png',
     availability: ['Full-Time']
   },
   {
